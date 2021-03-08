@@ -90,13 +90,13 @@ enum FormzInputStatus {
 /// ```
 /// {@endtemplate}
 abstract class FormzInput<T, E> {
-  const FormzInput._(this.value, [this.pure = true]);
+  const FormzInput.temp_private(this.value, [this.pure = true]);
 
   /// Constructor which create a `pure` [FormzInput] with a given value.
-  const FormzInput.pure(T value) : this._(value);
+  const FormzInput.pure(T value) : this.temp_private(value);
 
   /// Constructor which create a `dirty` [FormzInput] with a given value.
-  const FormzInput.dirty(T value) : this._(value, false);
+  const FormzInput.dirty(T value) : this.temp_private(value, false);
 
   /// The value of the given [FormzInput].
   /// For example, if you have a `FormzInput` for `FirstName`,
